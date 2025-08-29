@@ -1,7 +1,7 @@
 import jsonwebtoken from "jsonwebtoken";
 import { config } from "../config.js";
 
-export const validateAuthToken = (allowedUserTypes = []) => {
+export const validateAuthToken = (allowedUserTypes = [admin]) => {
   return (req, res, next) => {
     try {
       //1- Extraer el token de las cookies

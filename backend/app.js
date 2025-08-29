@@ -20,14 +20,16 @@ const app = express();
 
 // Que acepte cookies
 app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({extended: true }));
 
 // Definir las rutas de las funciones que tendrá la página web
-app.use("/api/products", validateAuthToken(["admin"]), productsRoutes);
+app.use("/api/products", validateAuthToken(["Admin"]), productsRoutes);
 app.use("/api/customers", customersRoutes);
 app.use("/api/employee", employeeRoutes);
 app.use("/api/branches", branchesRoutes);
 app.use("/api/reviews", reviewsRoutes);
-b;
+
 
 app.use("/api/registerEmployees", registerEmployeesRoutes);
 app.use("/api/login", loginRoutes);
